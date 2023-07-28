@@ -5,17 +5,36 @@ import {BrowserRouter as Router,
 Routes,
 Route
 }  from 'react-router-dom'
+import { useState } from "react";
 
 function App() {
+
+    let[cardData,setCardData]=useState({})
+
+    let formDataHandler = (name,year,img,desc)=>{
+        let cartData = {
+            name : name,
+            year :year,
+            img:img,
+            desc:desc
+        }
+        setCardData(cartData)
+        return;
+    }
+
+    console.log(cardData)
+    
   return (
+    <div className="relative">
  <Router>
        <Header/>
    
      <Routes>
-        <Route path="/" element={<Card/>} />
-        <Route path='/addForm' element={<AddForm/>} />
+        <Route path="/" element={<Card enteredData={cardData} />} />
+        <Route path='/addForm' element={<AddForm sendFormDataHandler={formDataHandler}/>} />
      </Routes>
  </Router>
+ </div>
   );
 }
 

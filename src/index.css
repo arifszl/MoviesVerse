@@ -6,7 +6,9 @@ body{
     background: black;
     color: rgb(255, 255, 255);
 }
-
+.header{
+    background-color: rgb(25, 27, 37);
+}
 .card{
     border-radius: 7px;
     background-color: rgb(44, 35, 48);
