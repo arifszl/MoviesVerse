@@ -113,14 +113,14 @@ const Review = ({ prevRating, ratedBy }) => {
           {data.map((e, i) => {
             return (
               <div
-                className="bg-gray-900 p-2 w-full mt-2 "
+                className="bg-gray-900 border-b border-gray-500 p-1 w-full mt-3 "
                 key={i}
               >
                 <div className="flex">
-                  <p className="text-blue-500">{e.author} </p>
+                  <h1 className="text-blue-500"> {e.author} </h1>
                 </div>
                 <ReactStars
-                  size={25}
+                  size={15}
                   value={e.rating}
                   edit={false}
                 />

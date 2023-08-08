@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import { moviesRef } from "../firebase/firebase";
+
+// addDoc is used to add data to our firebase database
 import { addDoc } from "firebase/firestore";
 import swal from "sweetalert";
 const AddForm = (props) => {
@@ -12,6 +14,8 @@ const AddForm = (props) => {
     year: " ",
     img: " ",
     description: " ",
+    rating: 0,
+    ratedBy: 0,
   });
   const [loading, setLoading] = useState(false);
 
@@ -58,6 +62,7 @@ const AddForm = (props) => {
                   Name
                 </label>
                 <input
+                  // ...form is used because we don't want to change other field, just the name field below
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   value={form.name}
                   type="text"

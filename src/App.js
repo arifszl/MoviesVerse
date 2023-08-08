@@ -18,8 +18,6 @@ function App() {
     return;
   };
 
-  console.log(cardData);
-
   return (
     <div className="relative">
       <Router>
